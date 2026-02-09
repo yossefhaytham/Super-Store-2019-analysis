@@ -1,55 +1,65 @@
 # SuperStore 2019 Analysis
 
 ## Project Overview
-This project represents an end-to-end data analysis solution for the SuperStore 2019 dataset. The primary goal was to transition from raw transactional records to a professional Business Intelligence dashboard. The project focuses on performance tracking, financial forecasting, and product segmentation to aid stakeholders in making data-driven decisions.
+This project transforms raw sales data from "SuperStore 2019" into a professional Business Intelligence dashboard. The goal is to track performance, forecast financial targets, and identify the best products. This dashboard helps stakeholders make smart decisions based on real data.
 
 ## Data Resources
 You can access the datasets used and generated in this project via the links below:
 
-* **Original Data Source:** [Download Orginal Data](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/orginal_data)
+* **Original Data Source:** [Download Original Data](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/orginal_data)
 * **Processed Analysis File:** [Download Final Data Model & Dashboard](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/SuperStore-2019-analysis)
 
 ## Problem Statement & Analytical Logic
-This analysis was driven by specific business questions regarding operational efficiency and product strategy. The following core problems were addressed:
+This analysis addresses specific business challenges regarding efficiency and strategy. I focused on three core areas:
 
-### 1. Branch Performance & Target Variance Analysis
+### 1. Branch Performance & Targets
 **The Business Question:**
-The company operates across four distinct branches. The critical challenge was not just to see how much they sold, but to determine if they met their financial potential compared to expectations.
+The company has four branches. We need to know not just how much they sold, but if they met their financial goals.
 
-**The Analytical Approach:**
-* I analyzed the performance of the four branches individually to isolate high-performing locations from those requiring operational support.
-* **Actual vs. Expected Profit:** I calculated the gap between the *Realized Profit* (what was actually earned) and the *Expected Profit* (the financial target).
-* This variance analysis allows management to see exactly which branch missed the target and by what margin, moving beyond simple sales totals to actual financial health.
+**The Solution:**
+* I analyzed each branch individually to separate top performers from those needing help.
+* **Actual vs. Expected Profit:** I calculated the difference between the profit we made and the profit we *expected* to make. This highlights exactly which branches are underperforming.
 
 ### 2. Product Category Optimization
 **The Business Question:**
-With a wide range of products, it is difficult to determine which segments are the true drivers of company growth versus those that are simply moving volume without generating significant return.
+With so many products, it is hard to know which ones actually drive growth and which ones are just "busy work."
 
-**The Analytical Approach:**
-* I performed a deep-dive analysis into the main product categories to identify the "Best Performing Category."
-* The analysis looked at two dimensions:
-    1.  **Revenue Generation:** Which category brings in the most cash flow?
-    2.  **Profitability:** Which category retains the most money after costs?
-* This logic helps in deciding where to allocate marketing budget and inventory space to maximize the Return on Investment (ROI).
+**The Solution:**
+* I analyzed product categories to find the "Best Performing Category."
+* I looked at **Revenue** (Cash flow) and **Profitability** (Real earnings). This helps decide where to spend the marketing budget.
+
+### 3. The Impact of Discount on Profitability
+**The Business Question:**
+Discounts drive sales, but they also eat into profits. We need to understand the "Safe Zone" for discounting.
+
+**The Logic Visualization:**
+The diagram below illustrates the business rule used in this analysis:
+
+![Profit vs Discount Logic](https://github.com/yossefhaytham/Super-Store-2019-analysis/blob/main/resource/roles.png)
+
+* **The Concept:** There is a baseline "Actual Cost" for every product.
+* **Positive Profit (+):** If we apply a small discount, the selling price stays *above* the cost. We make a profit.
+* **Negative Profit (-):** If the discount is too big, the selling price falls *below* the cost. This results in a loss.
+* **Goal:** The dashboard helps monitor these levels to ensure discounts do not result in selling at a loss.
 
 ## Technical Workflow
-The project was executed using a professional Excel BI pipeline:
+The project was built using a professional Excel BI pipeline:
 
-1.  **Data Extraction & Cleaning (Power Query):**
-    * Connected to the raw data source and consolidated files.
-    * Performed rigorous data cleaning: handling missing values, standardizing text formats, and removing duplicates.
-    * Applied conditional logic to create new classification columns necessary for the analysis.
+1.  **Data Cleaning (Power Query):**
+    * Connected to raw files and fixed missing values.
+    * Removed duplicates and standardized text formats.
+    * Created custom columns to classify data for analysis.
 
 2.  **Data Modeling (Power Pivot):**
-    * Designed a Star Schema data model by normalizing flat tables into Fact Tables (Transactions) and Dimension Tables (Lookups).
-    * Established "One-to-Many" relationships to ensure accurate filtering and high-performance calculations.
+    * Built a "Star Schema" model (separating Transactions from Lookup tables).
+    * Created relationships to ensure the dashboard filters work correctly and quickly.
 
-3.  **DAX Calculations:**
-    * Created Measure calculations to dynamically compute KPIs such as Total Sales, Total Profit, Profit Margin %, and Variance to Target.
+3.  **Calculations (DAX):**
+    * Wrote formulas to calculate Total Sales, Profit Margins, and Variance automatically.
 
-4.  **Visualization & Interaction:**
-    * Designed a user-friendly dashboard layout.
-    * Integrated Slicers and Timelines to allow users to filter the entire report by Branch, Year, or Category instantly.
+4.  **Dashboard Design:**
+    * Created a clean layout with interactive Slicers and Timelines.
+    * Users can filter by Branch, Year, or Category instantly.
 
 ## Dashboard Preview
 Below is the static view of the final dashboard design:
@@ -57,6 +67,6 @@ Below is the static view of the final dashboard design:
 ![Dashboard Static](https://raw.githubusercontent.com/yossefhaytham/Super_Store_2019_analysis/refs/heads/main/resource/IMG-For-dashboard.jpg)
 
 ## Interactive Demonstration
-The following GIF demonstrates the interactivity of the dashboard, showing how the "Actual vs. Expected" logic updates dynamically when filtering by different criteria:
+The following GIF demonstrates the interactivity of the dashboard, showing how the logic updates dynamically when filtering:
 
 ![Dashboard Interactive](https://raw.githubusercontent.com/yossefhaytham/Super_Store_2019_analysis/refs/heads/main/resource/Super_Store_2019_GIF.gif)
