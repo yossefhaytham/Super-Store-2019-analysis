@@ -6,8 +6,8 @@ This project represents an end-to-end data analysis solution for the SuperStore 
 ## Data Resources
 You can access the datasets used and generated in this project via the links below:
 
-* **Original Data Source:** [Raw Data Folder](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/orginal_data)
-* **Processed Analysis File:** [Final Data Model & Dashboard](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/SuperStore-2019-analysis)
+* **Original Data Source:** [Download Orginal Data](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/orginal_data)
+* **Processed Analysis File:** [Download Final Data Model & Dashboard](https://github.com/yossefhaytham/Super_Store_2019_analysis/tree/main/SuperStore-2019-analysis)
 
 ## Problem Statement & Analytical Logic
 This analysis was driven by specific business questions regarding operational efficiency and product strategy. The following core problems were addressed:
